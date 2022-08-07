@@ -2,9 +2,9 @@
     <test name="Api pet" >
         <classes>
             <class name="pet.PostPetTest"/>
-<!--            <class name="pet.GetPetTest" />-->
-<!--            <class name="pet.PutPetTest"/>-->
-<!--            <class name="pet.DeletePetTest"/>-->
+            <class name="pet.GetPetTest" />
+            <class name="pet.PutPetTest"/>
+            <class name="pet.DeletePetTest"/>
         </classes>
     </test>
 </suite>
