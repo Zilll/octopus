@@ -5,9 +5,9 @@
             <class name="pet.GetPetTest" />
             <class name="pet.PutPetTest"/>
             <class name="pet.DeletePetTest"/>
-<!--            <class name="store.PostOrderTest"/>-->
-<!--            <class name="store.GetOrderTest" />-->
-<!--            <class name="store.DeleteOrderTest"/>-->
+            <class name="store.PostOrderTest"/>
+            <class name="store.GetOrderTest" />
+            <class name="store.DeleteOrderTest"/>
         </classes>
     </test>
 </suite>
