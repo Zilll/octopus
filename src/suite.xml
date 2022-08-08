@@ -5,10 +5,6 @@
             <class name="pet.GetPetTest" />
             <class name="pet.PutPetTest"/>
             <class name="pet.DeletePetTest"/>
-        </classes>
-    </test>
-    <test name="Api store" >
-        <classes>
             <class name="store.PostOrderTest"/>
             <class name="store.GetOrderTest" />
             <class name="store.DeleteOrderTest"/>
