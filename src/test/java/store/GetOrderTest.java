@@ -14,7 +14,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
 @Epic("REST API Regression Testing")
-@Feature("Verify CRUD Operations on pet module")
+@Feature("Verify CRUD Operations on store module")
 public class GetOrderTest {
     Response response;
     RequestSpec requestSpec = new RequestSpec();
@@ -44,7 +44,7 @@ public class GetOrderTest {
                 .get(get_order_inventory);
         response.then().
                 statusCode(200)
-                .body("putstatavailable", equalTo(1))
+                .body("atavailablecheck", equalTo(1))
                 .log().everything();
     }
 

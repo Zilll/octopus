@@ -15,7 +15,7 @@ import static api.pet.Data.getPetId;
 import static api.pet.Path.*;
 
 @Epic("REST API Regression Testing")
-@Feature("Verify CRUD Operations on order module")
+@Feature("Verify CRUD Operations on store module")
 public class PostOrderTest {
     Response response;
     RequestSpec requestSpec = new RequestSpec();
