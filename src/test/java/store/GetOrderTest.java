@@ -44,7 +44,7 @@ public class GetOrderTest {
                 .get(get_order_inventory);
         response.then().
                 statusCode(200)
-                .body("atavailablecheck", equalTo(1))
+                .body("putstatavailable", equalTo(1))
                 .log().everything();
     }
 
