@@ -19,7 +19,7 @@ public class DeleteOrderTest {
 
     @Story("DELETE request")
     @Test(testName = "DELETE /pet/{petId} Deletes a pet statusCode(200)", priority = 1)
-    public void deletePetStatusCode200() {
+    public void orderDeleted() {
         response = requestSpec.RequestSpecification()
                 .contentType(ContentType.JSON)
                 .delete(get_order + ORDER_NUMBER);
@@ -28,7 +28,7 @@ public class DeleteOrderTest {
 
     @Story("DELETE request")
     @Test(testName = "DELETE /pet/{petId} Deletes a pet statusCode(404)", priority = 2)
-    public void deletePetStatusCode404() {
+    public void orderNorDeleted() {
         response = requestSpec.RequestSpecification()
                 .contentType(ContentType.JSON)
                 .delete(get_order + ORDER_NUMBER);
