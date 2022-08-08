@@ -18,7 +18,7 @@ public class DeleteOrderTest {
     RequestSpec requestSpec = new RequestSpec();
 
     @Story("DELETE request")
-    @Test(testName = "DELETE /pet/{petId} Deletes a pet statusCode(200)", priority = 1)
+    @Test(testName = "DELETE /store/order/{orderId} Delete purchase order by ID", priority = 1)
     public void orderDeleted() {
         response = requestSpec.RequestSpecification()
                 .contentType(ContentType.JSON)
@@ -27,7 +27,7 @@ public class DeleteOrderTest {
     }
 
     @Story("DELETE request")
-    @Test(testName = "DELETE /pet/{petId} Deletes a pet statusCode(404)", priority = 2)
+    @Test(testName = "DELETE /store/order/{orderId} Delete purchase order by ID statusCode(404)", priority = 2)
     public void orderNorDeleted() {
         response = requestSpec.RequestSpecification()
                 .contentType(ContentType.JSON)
