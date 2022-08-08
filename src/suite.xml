@@ -1,4 +1,4 @@
-<suite name="Component Tests" verbose="2" annotations="JDK">
+<suite name="Component Tests" verbose="1">
     <test name="Api pet" >
         <classes>
             <class name="pet.PostPetTest"/>
