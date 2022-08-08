@@ -3,6 +3,7 @@ package pet;
 import api.pet.Data;
 import api.pet.RequestSpec;
 import api.pet.post.BodyPut;
+import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.restassured.http.ContentType;
@@ -13,14 +14,15 @@ import org.testng.asserts.SoftAssert;
 import static api.pet.Data.getPetId;
 import static api.pet.Path.create_post_by_pet_id;
 
+@Epic("REST API Regression Testing")
+@Feature("Verify CRUD Operations on pet module")
 public class PutPetTest {
     Response response;
     RequestSpec requestSpec = new RequestSpec();
     Data data = new Data();
     BodyPut bodyPut = new BodyPut();
 
-    @Feature("API")
-    @Story("Pet API")
+    @Story("PUT request")
     @Test(testName = "PUT /pet Update an existing pet statusCode(200)", priority = 9)
     public void checkPutByPetId() {
         SoftAssert softAssert = new SoftAssert();
@@ -47,8 +49,7 @@ public class PutPetTest {
         softAssert.assertAll();
     }
 
-    @Feature("API")
-    @Story("Pet API")
+    @Story("PUT request")
     @Test(testName = "PUT /pet Update an existing pet statusCode(405)", priority = 10)
     public void checkPutWrongByPetId() {
         SoftAssert softAssert = new SoftAssert();

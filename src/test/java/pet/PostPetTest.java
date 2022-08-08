@@ -4,8 +4,8 @@ import api.pet.Data;
 import api.pet.post.BodyPost;
 import api.pet.RequestSpec;
 import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
-import io.qameta.allure.LabelAnnotation;
 import io.qameta.allure.Story;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -15,7 +15,8 @@ import org.testng.asserts.SoftAssert;
 import static api.pet.Data.getPetId;
 import static api.pet.Path.*;
 
-
+@Epic("REST API Regression Testing")
+@Feature("Verify CRUD Operations on pet module")
 public class PostPetTest {
     Response response;
     RequestSpec requestSpec = new RequestSpec();
@@ -24,8 +25,7 @@ public class PostPetTest {
 
     @Test(testName = "POST /pet Add a new pet to the store statusCode(200)", priority = 1)
     @Description("POST /pet Add a new pet to the store statusCode(200)")
-    @Feature("API")
-    @Story("Pet API")
+    @Story("POST request")
     public void checkByPetId() {
         SoftAssert softAssert = new SoftAssert();
         response = requestSpec.RequestSpecification().contentType(ContentType.JSON)
@@ -51,8 +51,7 @@ public class PostPetTest {
         softAssert.assertAll();
     }
 
-    @Feature("API")
-    @Story("Pet API")
+    @Story("POST request")
     @Test(testName = "POST /pet Add a new pet to the store statusCode(405)", priority = 2)
     public void check405() {
         response = requestSpec.RequestSpecification().contentType(ContentType.JSON)
@@ -60,8 +59,7 @@ public class PostPetTest {
         response.then().assertThat().statusCode(405).log().everything();
     }
 
-    @Feature("API")
-    @Story("Pet API")
+    @Story("POST request")
     @Test(testName = "POST /pet/{petId} Updates a pet in the store with form data statusCode(200)", priority = 3)
     public void checkUpdateStatusCode() {
         data.setName("updatedName");
@@ -74,8 +72,7 @@ public class PostPetTest {
         response.then().assertThat().statusCode(200).log().everything();
     }
 
-    @Feature("API")
-    @Story("Pet API")
+    @Story("POST request")
     @Test(testName = "POST /pet/{petId} Updates a pet in the store with form data statusCode(405)", priority = 4)
     public void checkUpdateStatusCode405() {
         response = requestSpec.RequestSpecification()

@@ -2,6 +2,7 @@ package pet;
 
 import api.pet.Data;
 import api.pet.RequestSpec;
+import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.restassured.http.ContentType;
@@ -11,13 +12,13 @@ import org.testng.annotations.Test;
 import static api.pet.Data.getPetId;
 import static api.pet.Path.update_post_by_pet_id;
 
+@Epic("REST API Regression Testing")
+@Feature("Verify CRUD Operations on pet module")
 public class DeletePetTest {
     Response response;
     RequestSpec requestSpec = new RequestSpec();
-    Data data = new Data();
 
-    @Feature("API")
-    @Story("Pet API")
+    @Story("DELETE request")
     @Test(testName = "DELETE /pet/{petId} Deletes a pet statusCode(200)", priority = 1)
     public void deletePetStatusCode200() {
         response = requestSpec.RequestSpecification()
@@ -26,8 +27,7 @@ public class DeletePetTest {
         response.then().assertThat().statusCode(200).log().everything();
     }
 
-    @Feature("API")
-    @Story("Pet API")
+    @Story("DELETE request")
     @Test(testName = "DELETE /pet/{petId} Deletes a pet statusCode(404)", priority = 2)
     public void deletePetStatusCode404() {
         response = requestSpec.RequestSpecification()
