@@ -1,5 +1,5 @@
 <suite name="Component Tests" verbose="1">
-    <test name="Api pet" >
+    <test name="Api suite" >
         <classes>
             <class name="pet.PostPetTest"/>
             <class name="pet.GetPetTest" />
