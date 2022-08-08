@@ -21,7 +21,7 @@ public class GetPetTest {
 
     @Story("GET request")
     @Test(testName = "GET /pet/{petId}Find pet by ID statusCode(200)", priority = 5)
-    public void getPetByIdStatusCode200() {
+    public void petGetById() {
         response = requestSpec.RequestSpecification()
                 .contentType(ContentType.JSON)
                 .get(update_post_by_pet_id + getPetId());
@@ -30,7 +30,7 @@ public class GetPetTest {
 
     @Story("GET request")
     @Test(testName = "GET /pet/{petId}Find pet by ID statusCode(404)", priority = 6)
-    public void getPetByIdStatusCode404() {
+    public void petNotGetById() {
         response = requestSpec.RequestSpecification()
                 .contentType(ContentType.JSON)
                 .get(update_post_by_pet_id + 922337243);
@@ -39,7 +39,7 @@ public class GetPetTest {
 
     @Story("GET request")
     @Test(testName = "GET /pet/findByStatus Finds Pets by status statusCode(200)", priority = 7)
-    public void getPetByStatusStatusCode200() {
+    public void petGetByStatus() {
         response = requestSpec.RequestSpecification()
                 .contentType(ContentType.JSON)
                 .param("status", "updatedStatus")
@@ -49,7 +49,7 @@ public class GetPetTest {
 
     @Story("GET request")
     @Test(testName = "GET /pet/findByStatus Finds Pets by status statusCode(400)", priority = 8)
-    public void getPetByWrongStatusStatusCode200() {
+    public void petNotGetByStatus() {
         response = requestSpec.RequestSpecification()
                 .contentType(ContentType.JSON)
                 .param("status", "noStatus")

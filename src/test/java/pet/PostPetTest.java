@@ -26,7 +26,7 @@ public class PostPetTest {
     @Test(testName = "POST /pet Add a new pet to the store statusCode(200)", priority = 1)
     @Description("POST /pet Add a new pet to the store statusCode(200)")
     @Story("POST request")
-    public void checkByPetId() {
+    public void petCreated() {
         SoftAssert softAssert = new SoftAssert();
         response = requestSpec.RequestSpecification().contentType(ContentType.JSON)
                 .body(bodyPost.bodyCreatePet(
@@ -53,7 +53,7 @@ public class PostPetTest {
 
     @Story("POST request")
     @Test(testName = "POST /pet Add a new pet to the store statusCode(405)", priority = 2)
-    public void check405() {
+    public void petNotCreated() {
         response = requestSpec.RequestSpecification().contentType(ContentType.JSON)
                 .post(create_post_by_pet_id);
         response.then().assertThat().statusCode(405).log().everything();
@@ -61,7 +61,7 @@ public class PostPetTest {
 
     @Story("POST request")
     @Test(testName = "POST /pet/{petId} Updates a pet in the store with form data statusCode(200)", priority = 3)
-    public void checkUpdateStatusCode() {
+    public void petUpdated() {
         data.setName("updatedName");
         data.setStatus("updatedStatus");
         response = requestSpec.RequestSpecification()
@@ -74,7 +74,7 @@ public class PostPetTest {
 
     @Story("POST request")
     @Test(testName = "POST /pet/{petId} Updates a pet in the store with form data statusCode(405)", priority = 4)
-    public void checkUpdateStatusCode405() {
+    public void petNotUpdated() {
         response = requestSpec.RequestSpecification()
                 .contentType("application/x-www-form-urlencoded")
                 .param("name", data.getName())

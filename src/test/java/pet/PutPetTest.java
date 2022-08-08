@@ -24,7 +24,7 @@ public class PutPetTest {
 
     @Story("PUT request")
     @Test(testName = "PUT /pet Update an existing pet statusCode(200)", priority = 9)
-    public void checkPutByPetId() {
+    public void petUpdated() {
         SoftAssert softAssert = new SoftAssert();
         response = requestSpec.RequestSpecification().contentType(ContentType.JSON)
                 .body(bodyPut.bodyUpdatePet(
@@ -35,7 +35,7 @@ public class PutPetTest {
                         "puturls",
                         9,
                         "puttagsname",
-                        "putavailable"))
+                        "putstatavailable"))
                 .put(create_post_by_pet_id);
         response.then().assertThat().statusCode(200).log().everything();
         softAssert.assertEquals(response.jsonPath().getInt("id"), getPetId(), "Pet wrong id");
@@ -45,13 +45,13 @@ public class PutPetTest {
         softAssert.assertEquals(response.jsonPath().getString("photoUrls[0]"), "puturls", "Pet wrong photoUrls");
         softAssert.assertEquals(response.jsonPath().getInt("tags[0].id"), 9, "Pet wrong tags.id");
         softAssert.assertEquals(response.jsonPath().getString("tags[0].name"), "puttagsname", "Pet wrong tags.name");
-        softAssert.assertEquals(response.jsonPath().getString("status"), "putavailable", "Pet wrong status");
+        softAssert.assertEquals(response.jsonPath().getString("status"), "putstatavailable", "Pet wrong status");
         softAssert.assertAll();
     }
 
     @Story("PUT request")
     @Test(testName = "PUT /pet Update an existing pet statusCode(405)", priority = 10)
-    public void checkPutWrongByPetId() {
+    public void petNotUpdated() {
         SoftAssert softAssert = new SoftAssert();
         response = requestSpec.RequestSpecification().contentType(ContentType.JSON)
                 .put(create_post_by_pet_id);
