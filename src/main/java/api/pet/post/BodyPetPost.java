@@ -3,7 +3,7 @@ package api.pet.post;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class BodyPost {
+public class BodyPetPost {
 
     public String bodyCreatePet(Integer id, Integer categoryId, String categoryName, String name, String photoUrls, Integer tagsId, String tagsName, String status){
         JSONArray jsonArrTags = new JSONArray();

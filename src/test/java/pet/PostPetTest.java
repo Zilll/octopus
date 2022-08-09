@@ -1,7 +1,7 @@
 package pet;
 
 import api.pet.Data;
-import api.pet.post.BodyPost;
+import api.pet.post.BodyPetPost;
 import api.pet.RequestSpec;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
@@ -21,7 +21,7 @@ public class PostPetTest {
     Response response;
     RequestSpec requestSpec = new RequestSpec();
     Data data = new Data();
-    BodyPost bodyPost = new BodyPost();
+    BodyPetPost bodyPetPost = new BodyPetPost();
 
     @Test(testName = "POST /pet Add a new pet to the store statusCode(200)", priority = 1)
     @Description("POST /pet Add a new pet to the store statusCode(200)")
@@ -29,7 +29,7 @@ public class PostPetTest {
     public void petCreated() {
         SoftAssert softAssert = new SoftAssert();
         response = requestSpec.RequestSpecification().contentType(ContentType.JSON)
-                .body(bodyPost.bodyCreatePet(
+                .body(bodyPetPost.bodyCreatePet(
                         data.setPetId(),
                         2,
                         "checkdogs",

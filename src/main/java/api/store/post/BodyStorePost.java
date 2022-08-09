@@ -1,9 +1,8 @@
 package api.store.post;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class BodyPost {
+public class BodyStorePost {
 
     public String bodyCreateStore(Integer id, Integer petId, Integer quantity, String status){
         JSONObject jsonObj = new JSONObject();
