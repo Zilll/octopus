@@ -75,12 +75,12 @@
                         </suiteXmlFile>
                     </suiteXmlFiles>
                     <testFailureIgnore>true</testFailureIgnore>
-                    <systemProperties>
-                        <property>
-                            <name>allure.results.directory</name>
-                            <value>allure-results</value>
-                        </property>
-                    </systemProperties>
+<!--                    <systemProperties>-->
+<!--                        <property>-->
+<!--                            <name>allure.results.directory</name>-->
+<!--                            <value>allure-results</value>-->
+<!--                        </property>-->
+<!--                    </systemProperties>-->
                 </configuration>
             </plugin>
             <plugin>
