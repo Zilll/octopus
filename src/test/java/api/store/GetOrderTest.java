@@ -36,6 +36,7 @@ public class GetOrderTest {
                 .get(get_order + "245");
         response.then().assertThat().statusCode(404).log().everything();
     }
+
     @Story("GET request")
     @Test(testName = "GET /store/inventory Returns pet inventories by status statusCode(200)", priority = 3)
     public void orderFoundByInventory() {

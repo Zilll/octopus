@@ -9,10 +9,11 @@ public class Data {
     }
 
     public int setPetId() {
-        petId = ThreadLocalRandom.current().nextInt(10,99999);
+        petId = ThreadLocalRandom.current().nextInt(10, 99999);
         System.out.println("Current petId is: " + petId);
         return petId;
     }
+
     public String getName() {
         return name;
     }
