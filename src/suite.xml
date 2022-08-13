@@ -1,13 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Component Tests" verbose="1">
     <test name="Api suite" >
         <classes>
-            <class name="pet.PostPetTest"/>
-            <class name="pet.GetPetTest" />
-            <class name="pet.PutPetTest"/>
-            <class name="store.PostOrderTest"/>
-            <class name="store.GetOrderTest" />
-            <class name="pet.DeletePetTest"/>
-            <class name="store.DeleteOrderTest"/>
+            <class name="api.pet.PostPetTest"/>
+            <class name="api.pet.GetPetTest" />
+            <class name="api.pet.PutPetTest"/>
+            <class name="api.store.PostOrderTest"/>
+            <class name="api.store.GetOrderTest" />
+            <class name="api.pet.DeletePetTest"/>
+            <class name="api.store.DeleteOrderTest"/>
         </classes>
     </test>
 </suite>

@@ -1,4 +1,4 @@
-package store;
+package api.store;
 
 import api.pet.Data;
 import api.pet.RequestSpec;

@@ -1,4 +1,4 @@
-package store;
+package api.store;
 
 import api.pet.RequestSpec;
 import io.qameta.allure.Epic;

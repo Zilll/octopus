@@ -1,4 +1,4 @@
-package pet;
+package api.pet;
 
 import api.pet.Data;
 import api.pet.post.BodyPetPost;
