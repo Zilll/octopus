@@ -42,8 +42,8 @@ Jenkins components:
 #### Docker containers
   
   - [Open Selenium hub](http://18.117.177.129:4444/ui#);
-  - [Open Selenium node FF](http://13.58.43.136:5555);
-  - [Open Selenium node Chrome](http://3.141.33.104:5555);
+  - Selenium node FF;
+  - Selenium node Chrome;
 
 #### Maven
   
