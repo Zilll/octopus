@@ -1,11 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="UI Tests" verbose="1" parallel="tests">
-    <test name="UI suite">
+    <test name="UI suite chrome">
         <classes>
             <class name="ui.ChromeTest"/>
         </classes>
     </test>
-    <test name="UI suite">
+    <test name="UI suite FireFox">
         <classes>
             <class name="ui.FireFoxTest"/>
         </classes>
