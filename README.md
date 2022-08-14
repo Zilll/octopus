@@ -1,14 +1,14 @@
-##About test project
+## About test project
 
 This project is an example of a test environment for automation test runs and uses such tools like:
 Jenkins, Docker, AWS, Java, TestNg, Allure, Maven e.t.c. .
 
-###How it work`s
+### How it work`s
 
 Each jenkins job is launched on separate jenkins node and each node is created on separate AWS unix instance with
 docker container inside.
 
-####Jenkins
+#### Jenkins
 
 Jenkins has three jobs ( :white_check_mark: ui, :white_check_mark: api,
 mobile, desktop, regression), job launch is triggered by git action(push), schedule or by manual launch.
@@ -19,7 +19,7 @@ Jenkins components:
 - Jenkins slave for API test suite;
 - Jenkins slave for regression test suite.
 
-####AWS
+#### AWS
 
   - JenkinsMaster (windows)
   - Jenkins slave api tests (unix)
@@ -28,7 +28,7 @@ Jenkins components:
   - Selenium node FF (unix)
   - Selenium node Chrome (unix)
   - 
-####Docker containers
+#### Docker containers
   
   - Selenium hub
   - Selenium node FF
