@@ -8,13 +8,24 @@ Jenkins, Docker, AWS, Java, TestNg, Allure, Maven e.t.c. .
 Each jenkins job is launched on separate jenkins node and each node is created on separate AWS unix instance with
 docker container inside.
 
+![Workflow](src\main\resources\diag.png "Catman")
+
+
+
 #### Jenkins
 
-Jenkins has three jobs ( :white_check_mark: ui, :white_check_mark: api,
-mobile, desktop, regression), job launch is triggered by git action(push), schedule or by manual launch.
+Jenkins has some jobs:
+
+- :white_check_mark: ui,
+- :white_check_mark: api,
+- :black_square_button: mobile,
+- :black_square_button: desktop,
+- :black_square_button: regression 
+
+Each job launch is triggered by git action(push), schedule or by manual launch.
 
 Jenkins components:
-- Jenkins master;
+- [Open Jenkins master](http://18.216.186.143:8080/);
 - Jenkins slave for UI test suite;
 - Jenkins slave for API test suite;
 - Jenkins slave for regression test suite.
@@ -30,27 +41,26 @@ Jenkins components:
   - 
 #### Docker containers
   
-  - Selenium hub
-  - Selenium node FF
-  - Selenium node Chrome
+  - [Open Selenium hub](http://18.117.177.129:4444/ui#);
+  - [Open Selenium node FF](http://13.58.43.136:5555);
+  - [Open Selenium node Chrome](http://3.141.33.104:5555);
 
-####Maven
+#### Maven
   
-####TestNg
+#### TestNg
 
-####Allure
+#### Allure
 
 Allure generates reports after test run.
-- link ui: http://18.216.186.143:8080/job/Octopuz_ui/allure/
-- link api: http://18.216.186.143:8080/job/Octopuz_api/allure/
-- 
-####noVnc
+- [Open ui report](http://18.216.186.143:8080/job/Octopuz_ui/allure/);
+- [Open api report](http://18.216.186.143:8080/job/Octopuz_api/allure/);
+#### noVnc
 
 noVNC online preview of test run on web browser
-- http://3.141.33.104:7900/
-- http://13.58.43.136:7900/
+- [Connect to online preview FF browser](http://3.141.33.104:7900/) pass: secret;
+- [Connect to online preview FF browser](http://13.58.43.136:7900/) pass: secret;
 
 
-###Possible problems
+### Possible problems
 
 -Free AWS uses dynamic ip, so after power of or reboot it will be impossible to connect for some stations.
