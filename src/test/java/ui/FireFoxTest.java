@@ -1,13 +1,16 @@
 package ui;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
-
 import java.net.MalformedURLException;
 
+@Epic("Firefox tests")
+@Feature("Base firefox check")
 public class FireFoxTest extends Base {
 
     @Test
