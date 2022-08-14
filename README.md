@@ -8,7 +8,7 @@ Jenkins, Docker, AWS, Java, TestNg, Allure, Maven e.t.c. .
 Each jenkins job is launched on separate jenkins node and each node is created on separate AWS unix instance with
 docker container inside.
 
-![Workflow](src\main\resources\diag.png "Catman")
+![Workflow](src/main/resources/diag.png "Workflow")
 
 
 
