@@ -15,15 +15,11 @@ public class FireFoxTest extends Base {
 
     @Test
     public void test2() throws MalformedURLException, InterruptedException {
-        firstTest("firefox");
-        System.out.println("go go go");
-//        driver.manage().window().maximize();
-
+        driverInit("firefox");
         driver.get("http://google.com");
         String firstWindow = driver.getWindowHandle();
         driver.switchTo().newWindow(WindowType.TAB);
         driver.get("http://google.com");
-
         driver.switchTo().window(firstWindow);
         WebElement enterText = driver.findElement(By.name("q"));
         enterText.sendKeys("Барсук");

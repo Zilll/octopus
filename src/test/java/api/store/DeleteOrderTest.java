@@ -1,6 +1,6 @@
 package api.store;
 
-import api.pet.RequestSpec;
+import api.RequestSpec;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
@@ -8,8 +8,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
-import static api.pet.Data.getPetId;
-import static api.pet.Path.*;
+import static api.Path.*;
 
 @Epic("REST API Regression Testing")
 @Feature("Verify CRUD Operations on store module")

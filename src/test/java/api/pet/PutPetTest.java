@@ -1,8 +1,7 @@
 package api.pet;
 
-import api.pet.Data;
-import api.pet.RequestSpec;
-import api.pet.post.BodyPut;
+import api.RequestSpec;
+import api.pet.post.BodyPetPut;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
@@ -12,7 +11,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import static api.pet.Data.getPetId;
-import static api.pet.Path.create_post_by_pet_id;
+import static api.Path.create_post_by_pet_id;
 
 @Epic("REST API Regression Testing")
 @Feature("Verify CRUD Operations on pet module")
@@ -20,14 +19,14 @@ public class PutPetTest {
     Response response;
     RequestSpec requestSpec = new RequestSpec();
     Data data = new Data();
-    BodyPut bodyPut = new BodyPut();
+    BodyPetPut bodyPetPut = new BodyPetPut();
 
     @Story("PUT request")
     @Test(testName = "PUT /pet Update an existing pet statusCode(200)", priority = 9)
     public void petUpdated() {
         SoftAssert softAssert = new SoftAssert();
         response = requestSpec.RequestSpecification().contentType(ContentType.JSON)
-                .body(bodyPut.bodyUpdatePet(
+                .body(bodyPetPut.bodyUpdatePet(
                         getPetId(),
                         5,
                         "putdogs",
@@ -35,7 +34,7 @@ public class PutPetTest {
                         "puturls",
                         9,
                         "puttagsname",
-                        "putstatavailable"))
+                        "putavailable"))
                 .put(create_post_by_pet_id);
         response.then().assertThat().statusCode(200).log().everything();
         softAssert.assertEquals(response.jsonPath().getInt("id"), getPetId(), "Pet wrong id");
@@ -45,7 +44,7 @@ public class PutPetTest {
         softAssert.assertEquals(response.jsonPath().getString("photoUrls[0]"), "puturls", "Pet wrong photoUrls");
         softAssert.assertEquals(response.jsonPath().getInt("tags[0].id"), 9, "Pet wrong tags.id");
         softAssert.assertEquals(response.jsonPath().getString("tags[0].name"), "puttagsname", "Pet wrong tags.name");
-        softAssert.assertEquals(response.jsonPath().getString("status"), "putstatavailable", "Pet wrong status");
+        softAssert.assertEquals(response.jsonPath().getString("status"), "putavailable", "Pet wrong status");
         softAssert.assertAll();
     }
 

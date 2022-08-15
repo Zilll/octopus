@@ -1,8 +1,7 @@
 package api.pet;
 
-import api.pet.Data;
+import api.RequestSpec;
 import api.pet.post.BodyPetPost;
-import api.pet.RequestSpec;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -12,8 +11,9 @@ import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import static api.RequestKeys.NAME;
 import static api.pet.Data.getPetId;
-import static api.pet.Path.*;
+import static api.Path.*;
 
 @Epic("REST API Regression Testing")
 @Feature("Verify CRUD Operations on pet module")
@@ -66,8 +66,8 @@ public class PostPetTest {
         data.setStatus("updatedStatus");
         response = requestSpec.RequestSpecification()
                 .contentType("application/x-www-form-urlencoded")
-                .param("name", data.getName())
-                .param("status", data.getStatus())
+                .param(NAME, data.getName())
+                .param(STATUS, data.getStatus())
                 .post(update_post_by_pet_id + getPetId());
         response.then().assertThat().statusCode(200).log().everything();
     }
@@ -77,8 +77,8 @@ public class PostPetTest {
     public void petNotUpdated() {
         response = requestSpec.RequestSpecification()
                 .contentType("application/x-www-form-urlencoded")
-                .param("name", data.getName())
-                .param("status", data.getStatus())
+                .param(NAME, data.getName())
+                .param(STATUS, data.getStatus())
                 .patch(update_post_by_pet_id + getPetId());
         response.then().assertThat().statusCode(405).log().everything();
     }

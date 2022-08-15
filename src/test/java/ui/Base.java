@@ -14,7 +14,7 @@ import java.time.Duration;
 public class Base {
     WebDriver driver =null;
 
-    public void firstTest(String browserName) throws MalformedURLException {
+    public void driverInit(String browserName) throws MalformedURLException {
         DesiredCapabilities ds = new DesiredCapabilities();
         if (browserName.equals("chrome")){
             ds.setPlatform(Platform.LINUX.family());

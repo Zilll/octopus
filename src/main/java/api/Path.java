@@ -1,4 +1,4 @@
-package api.pet;
+package api;
 
 public class Path {
     //Pet
