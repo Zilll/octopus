@@ -25,7 +25,7 @@ public class Base {
             ds.setBrowserName(Browser.FIREFOX.browserName());
         }
         //nix AWS
-        driver = new RemoteWebDriver(new URL("http://18.117.177.129:4444"),ds);
+        driver = new RemoteWebDriver(new URL("http://3.12.200.161:4444"),ds);
         //local
         //driver = new RemoteWebDriver(new URL("http://localhost:4444"),ds);
         //win AWS
